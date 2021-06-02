@@ -1,9 +1,5 @@
 // Copyright 2012 The Android Open Source Project
 
-package {
-    default_applicable_licenses: ["Android-Apache-2.0"],
-}
-
 cc_library_headers {
     name: "libmkbootimg_abi_headers",
     vendor_available: true,
@@ -21,10 +17,6 @@ cc_library_headers {
             enabled: true,
         },
     },
-    apex_available: [
-        "//apex_available:platform",
-        "com.android.virt",
-    ],
 }
 
 cc_library {
@@ -102,7 +94,4 @@ python_test_host {
         ":unpack_bootimg",
         "tests/data/*",
     ],
-    test_options: {
-        unit_test: true,
-    },
 }
