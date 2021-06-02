@@ -36,12 +36,12 @@ python_defaults {
     name: "mkbootimg_defaults",
     version: {
         py2: {
-            enabled: true,
-            embedded_launcher: true,
-        },
-        py3: {
             enabled: false,
             embedded_launcher: false,
+        },
+        py3: {
+            enabled: true,
+            embedded_launcher: true,
         },
     },
 }
@@ -79,20 +79,5 @@ python_binary_host {
         "mkbootimg",
         "toybox",
         "unpack_bootimg",
-    ],
-}
-
-python_test_host {
-    name: "mkbootimg_test",
-    defaults: ["mkbootimg_defaults"],
-    main: "tests/mkbootimg_test.py",
-    srcs: [
-        "tests/mkbootimg_test.py",
-    ],
-    data: [
-        ":avbtool",
-        ":mkbootimg",
-        ":unpack_bootimg",
-        "tests/data/*",
     ],
 }
